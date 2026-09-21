@@ -1,0 +1,5 @@
+Kangaroo by Poly by Google
+Source: https://poly.pizza/m/7uiVArqEC80
+License: Creative Commons Attribution 3.0
+https://creativecommons.org/licenses/by/3.0/
+Modifications: displayed with blue metallic materials, scaled, centred and animated with interactive rotation. Original model geometry preserved.

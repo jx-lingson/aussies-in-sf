@@ -1,0 +1,33 @@
+{
+  "title": "A small world, built together.",
+  "intro": "Aussies in SF helps Australians living in or visiting the Bay Area find one another. It’s an open-source community project.",
+  "sections": [
+    {
+      "heading": "Suburbs, never addresses",
+      "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, job description, suburb, LinkedIn link, contact email and visitor dates with people who can access this directory."
+    },
+    {
+      "heading": "Coming and going",
+      "body": "Resident profiles stay visible. Visitors appear from their arrival date through their departure date, inclusive. Dates use UTC. Sign in and submit the join form again to update your profile."
+    },
+    {
+      "heading": "Looking after the community",
+      "body": "Members self-identify as Australian; this is not a nationality verification service. Three different signed-in directory members reporting a profile will hide it for seven days. Duplicate reports and self-reports don’t count. Editing a profile doesn’t remove a suspension. Automatic reporting can be abused; a human moderation and appeal workflow is still needed before a broad launch."
+    },
+    {
+      "heading": "Your profile, your choice",
+      "body": "You can remove your profile at any time while signed in. Minimal report records are retained to prevent repeat reporting."
+    },
+    {
+      "heading": "Build it with us",
+      "body": "Code is MIT licensed. Contributions, issues and thoughtful suggestions are welcome."
+    },
+    {
+      "heading": "What’s in this first version",
+      "body": "Shared profiles and reporting use a hosted database. ChatGPT sign-in identifies members. LinkedIn links are supported; automatic LinkedIn name/photo importing is not connected. Only real member profiles appear on the map; initials stand in for profile photos."
+    }
+  ],
+  "sourceLinkLabel": "View the project on GitHub",
+  "removeProfileLabel": "Remove my profile",
+  "credits": "Map imagery © Esri and its data providers. Mapping library: Leaflet."
+}
