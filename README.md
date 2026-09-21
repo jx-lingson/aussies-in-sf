@@ -8,7 +8,7 @@ An open-source neighbourhood map for Australians living in or visiting the San F
 - Suburb counts, directory search, resident/visitor filters and arrival/departure dates.
 - Shared Cloudflare D1 profiles, authenticated updates and deletion.
 - Three distinct signed-in directory members trigger a seven-day suspension. Duplicate and self-reports are rejected. Updating a profile preserves suspension.
-- Clearly separated fictional demo profiles; no real member data is seeded or committed.
+- Only real members appear on the map; no example profiles or personal data are seeded or committed.
 
 ## Current limits
 
