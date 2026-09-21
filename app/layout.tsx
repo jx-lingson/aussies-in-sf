@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "G’day Bay — Australians around the Bay",
+  title: "Aussies in SF — Australians around the Bay",
   description: "Find Australians living in and visiting San Francisco, the Peninsula and the East Bay.",
   other: {
     "codex-preview": "development",

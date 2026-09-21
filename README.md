@@ -1,4 +1,4 @@
-# G’day Bay
+# Aussies in SF
 
 An open-source neighbourhood map for Australians living in or visiting the San Francisco Bay Area. MIT licensed; contributions welcome.
 

@@ -1,4 +1,4 @@
-# Contributing to G’day Bay
+# Contributing to Aussies in SF
 
 Open an issue to discuss changes, then fork this repository and submit a pull request. Small contributions are welcome: suburb coverage, accessibility, mobile usability, moderation and profile integrations.
 
