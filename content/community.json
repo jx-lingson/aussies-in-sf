@@ -1,6 +1,6 @@
 {
-  "title": "A small world, built together.",
-  "intro": "Aussies in SF helps Australians living in or visiting the Bay Area find one another. It’s an open-source community project.",
+  "title": "Aussies should be helping each other.",
+  "intro": "This is an open-source community project that helps Australians living in or visiting the Bay Area find one another.",
   "sections": [
     {
       "heading": "Don't leak your actual location",
@@ -16,10 +16,10 @@
     },
     {
       "heading": "Your profile, your choice",
-      "body": "You can remove your profile at any time while signed in. Minimal report records are retained to prevent repeat reporting."
+      "body": "You can remove your profile at any time. Minimal report records are retained to prevent repeat reporting."
     },
     {
-      "heading": "Build it with us",
+      "heading": "Build with us",
       "body": "Code is MIT licensed. Contributions, issues and thoughtful suggestions are welcome."
     },
     {
