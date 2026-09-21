@@ -3,7 +3,7 @@
   "intro": "Aussies in SF helps Australians living in or visiting the Bay Area find one another. It’s an open-source community project.",
   "sections": [
     {
-      "heading": "Suburbs, never addresses",
+      "heading": "Don't leak your actual location",
       "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, job description, suburb, LinkedIn link, contact email and visitor dates with people who can access this directory."
     },
     {
