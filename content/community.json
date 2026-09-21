@@ -4,7 +4,7 @@
   "sections": [
     {
       "heading": "Don't leak your actual location",
-      "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, job description, suburb, LinkedIn link, contact email and visitor dates with people who can access this directory."
+      "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, profile photo, job description, suburb, LinkedIn link, contact email and visitor dates with people who can access this directory."
     },
     {
       "heading": "Coming and going",
@@ -24,7 +24,7 @@
     },
     {
       "heading": "What’s in this first version",
-      "body": "Shared profiles and reporting use a hosted database. ChatGPT sign-in identifies members. LinkedIn links are supported; automatic LinkedIn name/photo importing is not connected. Only real member profiles appear on the map; initials stand in for profile photos."
+      "body": "Shared profiles and reporting use a hosted database. ChatGPT sign-in identifies members. LinkedIn links are supported; automatic LinkedIn name/photo importing is not connected. Only real member profiles appear on the map. Members upload their own profile photos; existing profiles show initials until a photo is added."
     }
   ],
   "sourceLinkLabel": "View the project on GitHub",
