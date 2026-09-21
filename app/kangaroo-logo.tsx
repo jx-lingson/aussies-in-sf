@@ -14,7 +14,7 @@ export default function KangarooLogo(){
     const element=host.current;
     const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
     renderer.setSize(64,68);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    element.appendChild(renderer.domElement);
+    renderer.domElement.style.opacity="0";element.appendChild(renderer.domElement);
     const scene=new THREE.Scene();
     const camera=new THREE.PerspectiveCamera(35,64/68,.1,100);camera.position.set(0,.2,5.3);
     scene.add(new THREE.HemisphereLight(0xeaf4ff,0x133273,2.8));
@@ -39,7 +39,7 @@ export default function KangarooLogo(){
      const model=gltf.scene;model.position.sub(center);
      const normalised=new THREE.Group();normalised.add(model);normalised.scale.setScalar(2.6/Math.max(size.x,size.y,size.z));
      model.traverse((child:any)=>{if(child.isMesh){for(const m of [child.material].flat())m.dispose();child.material=new THREE.MeshStandardMaterial({color:0x416de0,metalness:.48,roughness:.31,flatShading:true})}});
-     group.add(normalised);group.rotation.y=-.7;group.rotation.x=.12;setLoaded(true);
+     group.add(normalised);group.rotation.y=-.7;group.rotation.x=.12;renderer.render(scene,camera);renderer.domElement.style.opacity="1";setLoaded(true);
     },undefined,()=>{if(!disposed)setLoaded(false)});
     function animate(t:number){if(disposed)return;const dt=Math.min((t-lastTime)/1000,.05);lastTime=t;
      if(!document.hidden&&!dragging&&!paused.current){const extra=Math.min(boost,dt*5);boost-=extra;group.rotation.y+=dt*.55+extra}
@@ -48,5 +48,5 @@ export default function KangarooLogo(){
    }catch{if(!disposed)setLoaded(false)}
   }mount();return()=>{disposed=true;cleanup()};
  },[]);
- return <div className="roo-logo"><div ref={host} className="roo-canvas" role="img" aria-label="Blue 3D kangaroo. Drag to rotate." onDoubleClick={()=>spin.current?.()}>{!loaded&&<span className="roo-fallback" aria-hidden="true">🦘</span>}</div>{loaded&&<button className="roo-pause" title={stopped?'Spin kangaroo':'Pause kangaroo'} aria-label={stopped?'Spin kangaroo':'Pause kangaroo'} onClick={()=>{paused.current=!paused.current;setStopped(paused.current)}}>{stopped?'▷':'Ⅱ'}</button>}</div>
+ return <div className="roo-logo"><div ref={host} className="roo-canvas" role="img" aria-label="Blue 3D kangaroo. Drag to rotate." onDoubleClick={()=>spin.current?.()}></div>{loaded&&<button className="roo-pause" title={stopped?'Spin kangaroo':'Pause kangaroo'} aria-label={stopped?'Spin kangaroo':'Pause kangaroo'} onClick={()=>{paused.current=!paused.current;setStopped(paused.current)}}>{stopped?'▷':'Ⅱ'}</button>}</div>
 }
