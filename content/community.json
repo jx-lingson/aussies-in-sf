@@ -4,7 +4,7 @@
   "sections": [
     {
       "heading": "Don't leak your actual location",
-      "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, profile photo, job description, suburb, LinkedIn link, contact email and visitor dates with people who can access this directory."
+      "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, profile photo, job description, suburb, LinkedIn link, an optional contact email and visitor dates with people who can access this directory."
     },
     {
       "heading": "Coming and going",
@@ -20,11 +20,15 @@
     },
     {
       "heading": "Build with us",
-      "body": "Code is MIT licensed. Contributions, issues and thoughtful suggestions are welcome."
+      "body": "The code is MIT licensed. Anyone can open an issue, fork the project or propose a pull request. Jerry reviews contributions and controls what is merged and published. Public source does not mean public write access; site copy is maintained by Jerry."
     },
     {
       "heading": "What’s in this first version",
       "body": "Shared profiles and reporting use a hosted database. Profiles are managed through a private edit link, without ChatGPT sign-in. LinkedIn links are supported; automatic LinkedIn name/photo importing is not connected. Only real member profiles appear on the map. Members upload their own profile photos; existing profiles show initials until a photo is added."
+    },
+    {
+      "heading": "Australian companies in the Bay",
+      "body": "Australian-founded or Australian-led companies can list their neighbourhood, description and website. Contact email is optional. You must be authorised to represent the company. Listings use a separate private edit link; they are community-submitted and are not independently verified."
     }
   ],
   "sourceLinkLabel": "View the project on GitHub",

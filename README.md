@@ -42,3 +42,11 @@ The portable build runs Vinext directly without a host `timeout` command. The ma
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
 - [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+
+## Community contributions
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Anyone can fork the source, report issues and propose pull requests. The owner controls merges, site copy and publication. Public repository access does not grant write access.
+
+## Company directory
+
+People and companies have separate map views. Company entries persist in D1 and use a separate private edit link and HttpOnly cookie. One company can be managed per browser session; saved edit links switch between entries. Company name, description, HTTPS website, neighbourhood and representation consent are required. Email is optional for both profiles and companies. Company listings are self-declared, not verified.

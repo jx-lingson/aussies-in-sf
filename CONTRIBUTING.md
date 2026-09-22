@@ -1,20 +1,15 @@
 # Contributing to Aussies in SF
 
-Open an issue to discuss changes, then fork this repository and submit a pull request. Small contributions are welcome: suburb coverage, accessibility, mobile usability, moderation and profile integrations.
+Ideas, bug reports and pull requests are welcome. Public source does not grant write access to this repository or access to the live directory's data.
 
-## Development
+1. Open an issue describing the problem or proposed improvement. Discuss larger changes before building them.
+2. Fork the repository and create a branch in your fork.
+3. Make a focused change. Keep neighbourhood-only location privacy and the current design intact unless the proposal explicitly changes them.
+4. Run the build and check any affected flows locally. Use synthetic profiles and companies; never commit private edit links, real member data, database exports or credentials.
+5. Submit a pull request with a short explanation and relevant screenshots or checks.
 
-Use Node 22.13 or newer. Run `npm run install:ci`, then `npm run dev`. The local development preview supplies a mock identity; never enable mock identity in production. Shared data uses Cloudflare D1. Run `npm run db:generate` after schema edits. Build with `npm run build`, then apply pending generated SQL locally using the Wrangler command described in README.md. Production migrations are deployed with the app.
+Jerry (@jx-lingson) decides what is accepted. Site copy in `content/community.json` is maintained by Jerry. Contributors may suggest wording through an issue or pull request; they cannot directly edit the original repository or live site.
 
-## Review checklist
+Merging source does not automatically publish it. Production deployment and access settings are controlled by the site owner. CODEOWNERS requests Jerry's review; branch protection, if configured, is what enforces review requirements.
 
-- Never collect or plot street addresses, precise coordinates or GPS locations for people.
-- Enforce profile ownership and unique reporters on the server.
-- Keep credentials, databases, user submissions and personal information out of Git.
-- Label fictional examples explicitly.
-- Preserve visible imagery attribution. The MIT licence covers project code, not third-party map imagery.
-- Test date boundaries, duplicate reports and suspended-profile updates when changing those flows.
-
-## Current priorities
-
-LinkedIn OIDC integration (name/photo; job title may require manual entry or additional access), user-uploaded profile photos, human moderation and appeals, contact visibility preferences, and cluster collision handling at low zoom. OAuth requires operator configuration; never scrape LinkedIn pages or claim URL pasting is automatic import.
+The source code is MIT licensed. Uploaded member photos, company information and directory data are not included in that code license. Third-party assets retain their stated licenses.
