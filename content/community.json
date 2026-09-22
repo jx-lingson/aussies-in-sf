@@ -20,11 +20,7 @@
     },
     {
       "heading": "Build with us",
-      "body": "The code is MIT licensed. Anyone can open an issue, fork the project or propose a pull request. Jerry reviews contributions and controls what is merged and published. Public source does not mean public write access; site copy is maintained by Jerry."
-    },
-    {
-      "heading": "What’s in this first version",
-      "body": "Shared profiles and reporting use a hosted database. Profiles are managed through a private edit link, without ChatGPT sign-in. LinkedIn links are supported; automatic LinkedIn name/photo importing is not connected. Only real member profiles appear on the map. Members upload their own profile photos; existing profiles show initials until a photo is added."
+      "body": "The code is MIT licensed. Anyone can open an issue, fork the project or propose a pull request. Jerry reviews contributions and controls what is merged and published. Public source does not mean public write access."
     },
     {
       "heading": "Australian companies in the Bay",
