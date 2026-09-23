@@ -17,8 +17,6 @@ export async function POST(r:Request){
   if(hasPhoto&&(photo.size>2*1024*1024||photo.type!=='image/jpeg'))return fail('Please choose a JPEG, PNG or WebP photo using the form.');
   const bytes=hasPhoto?new Uint8Array(await photo.arrayBuffer()):null;if(bytes&&(bytes[0]!==255||bytes[1]!==216||bytes[2]!==255))return fail('Invalid photo file.');
   const p=parsed.data,db=database(),bucket=photos(),id=owner?.profile.id||crypto.randomUUID(),token=owner?.token||newToken();
-  const duplicate=await db.prepare("SELECT id FROM profiles WHERE id != ? AND ((? != '' AND lower(email)=lower(?)) OR lower(rtrim(linkedin,'/'))=lower(rtrim(?,'/')))").bind(id,p.email,p.email,p.linkedin).first();
-  if(duplicate)return fail('A profile with this email or LinkedIn already exists. Use the browser where you created it.',409);
   const photoKey=bytes?crypto.randomUUID():owner!.profile.photo_key;
   if(bytes){key=photoKey;await bucket.put(photoKey,bytes,{httpMetadata:{contentType:'image/jpeg'}})}
   await db.prepare('INSERT INTO profiles (id,name,title,email,linkedin,area,status,arrival,departure,created_at,photo_key,owner_key) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET name=excluded.name,title=excluded.title,email=excluded.email,linkedin=excluded.linkedin,area=excluded.area,status=excluded.status,arrival=excluded.arrival,departure=excluded.departure,photo_key=excluded.photo_key,owner_key=excluded.owner_key').bind(id,p.name,p.title,p.email,p.linkedin,p.area,p.status,p.status==='visitor'?p.arrival:null,p.status==='visitor'?p.departure:null,Date.now(),photoKey,await digest(token)).run();
