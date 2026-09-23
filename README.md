@@ -12,7 +12,7 @@ An open-source neighbourhood map for Australians living in or visiting the San F
 
 ## Current limits
 
-Joining needs no account. An opaque private edit link and a persistent HttpOnly cookie authorize updates and deletion; only a SHA-256 hash is stored in D1. Existing ChatGPT-owned entries are migrated when their owner visits. Profiles and photos persist in D1 and R2 across deployments. Visitors appear during their travel dates in San Francisco time; the owner view also shows expired or future entries. An arbitrary LinkedIn URL cannot auto-import a profile: manual details and photo uploads are supported. LinkedIn OAuth and human moderation/appeals remain follow-up work. Automatic reports are not proof of nationality and are vulnerable to coordinated abuse. This is an early pilot, not a fully moderated public network.
+Joining needs no account. A persistent HttpOnly browser cookie authorizes updates and deletion; only a SHA-256 hash is stored in D1. Existing ChatGPT-owned entries are migrated when their owner visits. Profiles and photos persist in D1 and R2 across deployments. Visitors appear during their travel dates in San Francisco time; the owner view also shows expired or future entries. An arbitrary LinkedIn URL cannot auto-import a profile: manual details and photo uploads are supported. LinkedIn OAuth and human moderation/appeals remain follow-up work. Automatic reports are not proof of nationality and are vulnerable to coordinated abuse. This is an early pilot, not a fully moderated public network.
 
 The code can run on Cloudflare Workers with D1. Supabase is not required for this version. Deployments outside Sites must replace the trusted identity integration; never trust incoming identity headers on an unprotected origin.
 
@@ -49,4 +49,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Anyone can fork the source, report issue
 
 ## Company directory
 
-People and companies have separate map views. Company entries persist in D1 and use a separate private edit link and HttpOnly cookie. One company can be managed per browser session; saved edit links switch between entries. Company name, description, HTTPS website, neighbourhood and representation consent are required. Email is optional for both profiles and companies. Company listings are self-declared, not verified.
+People and companies have separate map views. Company entries persist in D1 and use a separate HttpOnly cookie. One company can be managed per browser. Public sharing links never grant edit access; clearing browser data loses management access. Company name, description, HTTPS website, neighbourhood and representation consent are required. Email is optional for both profiles and companies. Company listings are self-declared, not verified.

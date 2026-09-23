@@ -3,7 +3,7 @@
   "intro": "This is an open-source community project that helps Australians living in or visiting the Bay Area find one another.",
   "sections": [
     {
-      "heading": "Don't leak your actual location",
+      "heading": "Share what you're comfortable with",
       "body": "Every pin represents the centre of a neighbourhood. We don’t collect your exact address or GPS location. Publishing a profile shares your name, profile photo, job description, suburb, LinkedIn link, an optional contact email and visitor dates with people who can access this directory."
     },
     {
@@ -15,16 +15,12 @@
       "body": "Members self-identify as Australian; this is not a nationality verification service. Three different directory profiles reporting a profile will hide it for seven days. Duplicate reports and self-reports don’t count. Editing a profile doesn’t remove a suspension. Automatic reporting can be abused; a human moderation and appeal workflow is still needed before a broad launch."
     },
     {
-      "heading": "Your profile, your choice",
-      "body": "No account is required. This browser remembers your profile; keep your private edit link to update or remove it on another device. Anyone with that link can manage your entry, so keep it private. Minimal report records are retained to prevent repeat reporting."
-    },
-    {
       "heading": "Build with us",
-      "body": "The code is MIT licensed. Anyone can open an issue, fork the project or propose a pull request. Jerry reviews contributions and controls what is merged and published. Public source does not mean public write access."
+      "body": "The code is MIT licensed. Anyone can open an issue, fork the project or propose a pull request. We will review contributions and decide what is merged and published. Public source does not mean public write access."
     },
     {
       "heading": "Australian companies in the Bay",
-      "body": "Australian-founded or Australian-led companies can list their neighbourhood, description and website. Contact email is optional. You must be authorised to represent the company. Listings use a separate private edit link; they are community-submitted and are not independently verified."
+      "body": "Australian-founded or Australian-led companies can list their neighbourhood, description and website. Contact email is optional. You must be authorised to represent the company. Use the browser where you created your listing to edit or remove it. Listings are community-submitted and are not independently verified."
     }
   ],
   "sourceLinkLabel": "View the project on GitHub",
