@@ -1,3 +1,4 @@
+import {directoryData} from '../directory';
 import {digest,newToken,ownedProfile,ownerCookie,todayInSF} from '../ownership';
 import {areas} from '../../shared';
 import {database,photos,sameOrigin,fail} from '../helpers';
@@ -5,7 +6,7 @@ import {z} from 'zod';
 export const dynamic='force-dynamic';
 const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(s=>!Number.isNaN(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s);
 const schema=z.object({name:z.string().trim().min(2).max(80),title:z.string().trim().min(2).max(120),email:z.union([z.string().trim().email().max(254),z.literal('')]).default(''),linkedin:z.string().url().max(300).refine(s=>{const u=new URL(s);return u.protocol==='https:'&&['linkedin.com','www.linkedin.com'].includes(u.hostname)&&/^\/in\/[^/]+\/?$/.test(u.pathname)},'Use a LinkedIn profile URL'),area:z.string().refine(s=>areas.some(a=>a.name===s)),status:z.enum(['resident','visitor']),arrival:date.optional(),departure:date.optional(),consent:z.literal('yes'),australian:z.literal('yes')}).refine(p=>p.status!=='visitor'||(p.arrival&&p.departure&&p.arrival<=p.departure),'Enter a valid arrival and departure date');
-export async function GET(){try{const today=todayInSF();const data=await database().prepare("SELECT id,name,title,email,linkedin,photo_key,CASE WHEN area IN ('Inner Richmond','Outer Richmond') THEN 'Richmond' ELSE area END AS area,status,arrival,departure FROM profiles WHERE suspended_until <= ? AND (status = ? OR (arrival <= ? AND departure >= ?)) ORDER BY name").bind(Date.now(),'resident',today,today).all();return Response.json({profiles:data.results.map((p:any)=>{const {photo_key,...rest}=p;return {...rest,photoUrl:photo_key?`/api/photos/${encodeURIComponent(photo_key)}`:null}})},{headers:{'Cache-Control':'no-store'}})}catch(e){console.error(e);return fail('The directory is temporarily unavailable.',503)}}
+export async function GET(r:Request){try{return Response.json(await directoryData(r),{headers:{'Cache-Control':'private, no-store','Vary':'Cookie'}})}catch(e){console.error(e);return fail('The directory is temporarily unavailable.',503)}}
 export async function POST(r:Request){
  if(!sameOrigin(r))return fail('Request origin rejected.',403);
 
