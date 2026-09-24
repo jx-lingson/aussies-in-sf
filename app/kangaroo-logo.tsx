@@ -17,9 +17,9 @@ export default function KangarooLogo(){
     renderer.domElement.style.opacity="0";element.appendChild(renderer.domElement);
     const scene=new THREE.Scene();
     const camera=new THREE.PerspectiveCamera(35,64/68,.1,100);camera.position.set(0,.2,5.3);
-    scene.add(new THREE.HemisphereLight(0xeaf4ff,0x133273,2.8));
+    scene.add(new THREE.HemisphereLight(0xfff3d6,0x60451e,2.8));
     const light=new THREE.DirectionalLight(0xffffff,3.4);light.position.set(3,4,5);scene.add(light);
-    const rim=new THREE.DirectionalLight(0x8facff,2);rim.position.set(-3,1,-2);scene.add(rim);
+    const rim=new THREE.DirectionalLight(0xffd88a,2);rim.position.set(-3,1,-2);scene.add(rim);
     const group=new THREE.Group();scene.add(group);
     let frame=0,dragging=false,lastX=0,lastTime=0,boost=0;
     const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -38,7 +38,7 @@ export default function KangarooLogo(){
      const box=new THREE.Box3().setFromObject(gltf.scene),size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
      const model=gltf.scene;model.position.sub(center);
      const normalised=new THREE.Group();normalised.add(model);normalised.scale.setScalar(2.6/Math.max(size.x,size.y,size.z));
-     model.traverse((child:any)=>{if(child.isMesh){for(const m of [child.material].flat())m.dispose();child.material=new THREE.MeshStandardMaterial({color:0x416de0,metalness:.48,roughness:.31,flatShading:true})}});
+     model.traverse((child:any)=>{if(child.isMesh){for(const m of [child.material].flat())m.dispose();child.material=new THREE.MeshStandardMaterial({color:0xd6a83e,metalness:.62,roughness:.28,flatShading:true})}});
      group.add(normalised);group.rotation.y=-.7;group.rotation.x=.12;renderer.render(scene,camera);renderer.domElement.style.opacity="1";setLoaded(true);
     },undefined,()=>{if(!disposed)setLoaded(false)});
     function animate(t:number){if(disposed)return;const dt=Math.min((t-lastTime)/1000,.05);lastTime=t;
@@ -48,5 +48,5 @@ export default function KangarooLogo(){
    }catch{if(!disposed)setLoaded(false)}
   }mount();return()=>{disposed=true;cleanup()};
  },[]);
- return <div className="roo-logo"><div ref={host} className="roo-canvas" role="img" aria-label="Blue 3D kangaroo. Drag to rotate." onDoubleClick={()=>spin.current?.()}></div>{loaded&&<button className="roo-pause" title={stopped?'Spin kangaroo':'Pause kangaroo'} aria-label={stopped?'Spin kangaroo':'Pause kangaroo'} onClick={()=>{paused.current=!paused.current;setStopped(paused.current)}}>{stopped?'▷':'Ⅱ'}</button>}</div>
+ return <div className="roo-logo"><div ref={host} className="roo-canvas" role="img" aria-label="Gold 3D kangaroo. Drag to rotate." onDoubleClick={()=>spin.current?.()}></div>{loaded&&<button className="roo-pause" title={stopped?'Spin kangaroo':'Pause kangaroo'} aria-label={stopped?'Spin kangaroo':'Pause kangaroo'} onClick={()=>{paused.current=!paused.current;setStopped(paused.current)}}>{stopped?'▷':'Ⅱ'}</button>}</div>
 }
