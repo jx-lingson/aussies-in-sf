@@ -1,4 +1,6 @@
-import {sqliteTable,text,integer,primaryKey} from 'drizzle-orm/sqlite-core';
+import {sqliteTable,text,integer,real,primaryKey} from 'drizzle-orm/sqlite-core';
 export const profiles=sqliteTable('profiles',{id:text('id').primaryKey(),name:text('name').notNull(),title:text('title').notNull(),email:text('email').notNull(),linkedin:text('linkedin').notNull(),photoKey:text('photo_key'),ownerKey:text('owner_key').unique(),area:text('area').notNull(),status:text('status').notNull(),arrival:text('arrival'),departure:text('departure'),suspendedUntil:integer('suspended_until').notNull().default(0),createdAt:integer('created_at').notNull()});
 export const reports=sqliteTable('reports',{target:text('target').notNull(),reporter:text('reporter').notNull(),createdAt:integer('created_at').notNull()},t=>[primaryKey({columns:[t.target,t.reporter]})]);
 export const companies=sqliteTable('companies',{id:text('id').primaryKey(),name:text('name').notNull(),description:text('description').notNull(),website:text('website').notNull().unique(),email:text('email').notNull().default(''),area:text('area').notNull(),ownerKey:text('owner_key').notNull().unique(),createdAt:integer('created_at').notNull()});
+
+export const neighbourhoods=sqliteTable('neighbourhoods',{key:text('key').primaryKey(),name:text('name').notNull(),region:text('region').notNull(),lat:real('lat').notNull(),lng:real('lng').notNull()});
